@@ -1,24 +1,12 @@
 server:
-  port: 8781
-
-
-#指定注册中心地址
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
-#服务的名称
+  port: 8100
 spring:
   application:
     name: order-service
-
-#超时时间
-feign:
+eureka:
+  instance:
+    hostname: localhost
+    non-secure-port: ${server.port}
   client:
-    config:
-      default:
-        connectTimeout: 5000
-        readTimeout: 5000
-  hystrix:
-    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

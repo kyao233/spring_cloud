@@ -4,11 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.spring.kyao233</groupId>
-    <artifactId>order_service</artifactId>
+    <artifactId>eureka_server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
     <packaging>jar</packaging>
 
-    <name>order_service</name>
+    <name>eureka_server</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -27,16 +28,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
 
         <dependency>
