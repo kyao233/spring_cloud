@@ -13,6 +13,9 @@ import org.springframework.web.client.RestTemplate;
  * @date 2019/12/29 19:07
  *
  * http://localhost:8100/api/v1/order/save?user_id=1&product_id=1
+ *
+ * need to set eureka.instance.hostname to localhost
+ * in order to replace computer name with localhost
  */
 @RestController
 @RequestMapping("/api/v1/order")
