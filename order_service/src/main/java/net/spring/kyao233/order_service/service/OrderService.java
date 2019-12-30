@@ -8,4 +8,6 @@ public interface OrderService {
 
     public Object save(int userId, int productId);
 
+    public Object saveByRibbon(int userId, int productId);
+
 }
