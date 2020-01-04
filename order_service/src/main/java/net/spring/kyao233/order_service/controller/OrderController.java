@@ -14,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
  *
  * http://localhost:8100/api/v1/order/save?user_id=1&product_id=1
  * http://localhost:8100/api/v1/order/save/ribbon?user_id=1&product_id=1
+ * http://localhost:8100/api/v1/order/save/feign?user_id=1&product_id=1
  * need to set eureka.instance.hostname to localhost
  * in order to replace computer name with localhost
  */
@@ -34,8 +35,14 @@ public class OrderController {
 
     @GetMapping("/save/ribbon")
     public Object saveByRibbon(@RequestParam("user_id") int userId,
-                       @RequestParam("product_id") int productId) {
+                               @RequestParam("product_id") int productId) {
         return orderService.saveByRibbon(userId, productId);
+    }
+
+    @GetMapping("/save/feign")
+    public Object saveByFeign(@RequestParam("user_id") int userId,
+                               @RequestParam("product_id") int productId) {
+        return orderService.saveByFeign(userId, productId);
     }
 
 }

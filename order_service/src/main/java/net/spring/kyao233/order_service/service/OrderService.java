@@ -10,4 +10,7 @@ public interface OrderService {
 
     public Object saveByRibbon(int userId, int productId);
 
+    public Object saveByFeign(int userId, int productId);
+
+
 }
