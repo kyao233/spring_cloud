@@ -15,3 +15,13 @@ eureka:
 product-service:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+#修改调用超时时间
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 4000
+        readTimeout: 4000
