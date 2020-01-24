@@ -10,21 +10,8 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-#修改调用超时时间
-feign:
-  hystrix:
-    enabled: true
-  client:
-    config:
-      default:
-        connectTimeout: 4000
-        readTimeout: 4000
-
-#设置超时时间
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 4000
+zuul:
+  ignoredServices: '*'
+  routes:
+    product-service: /apigateway/product/**
+    order-service: /apigateway/order/**
