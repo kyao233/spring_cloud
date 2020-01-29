@@ -21,6 +21,10 @@ import java.util.Map;
  * http://localhost:8100/api/v1/order/save/feign?user_id=1&product_id=1
  * need to set eureka.instance.hostname to localhost
  * in order to replace computer name with localhost
+ *
+ * API-Gateway URL
+ * http://localhost:9100/apigateway/order/api/v1/order/save/feign?user_id=1&product_id=1
+ *  *
  */
 @RestController
 @RequestMapping("/api/v1/order")
