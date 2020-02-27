@@ -2,6 +2,8 @@ package net.spring.kyao233.product_service.service.impl;
 
 import net.spring.kyao233.product_service.domain.Product;
 import net.spring.kyao233.product_service.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -12,6 +14,8 @@ import java.util.*;
  */
 @Service
 public class ProductServiceImpl implements ProductService {
+
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
     private static HashMap<Integer, Product> daoMap = new HashMap<>();
 
@@ -45,6 +49,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product findById(int id) {
+        logger.info("findById " + id);
         return daoMap.get(id);
     }
 }

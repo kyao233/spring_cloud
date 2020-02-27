@@ -34,13 +34,13 @@ public class LoginFilter extends ZuulFilter {
 
         System.out.println(request.getRequestURI());
         System.out.println(request.getRequestURL());
-        if ("/apigateway/order/api/api/v1/order/save".equals(request.getRequestURI())) {
-            return true;
-        } else if("/apigateway/order/api/v1/order/save/ribbon".equals(request.getRequestURI())) {
-            return true;
-        } else if("/apigateway/order/api/v1/order/save/feign".equals(request.getRequestURI())) {
-            return true;
-        }
+//        if ("/apigateway/order/api/api/v1/order/save".equals(request.getRequestURI())) {
+//            return true;
+//        } else if("/apigateway/order/api/v1/order/save/ribbon".equals(request.getRequestURI())) {
+//            return true;
+//        } else if("/apigateway/order/api/v1/order/save/feign".equals(request.getRequestURI())) {
+//            return true;
+//        }
         return false;
     }
 

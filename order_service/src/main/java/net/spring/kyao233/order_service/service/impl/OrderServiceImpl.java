@@ -5,6 +5,8 @@ import net.spring.kyao233.order_service.domain.ProductOrder;
 import net.spring.kyao233.order_service.service.OrderService;
 import net.spring.kyao233.order_service.service.client.ProductFeignClient;
 import net.spring.kyao233.order_service.utils.JsonUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -22,6 +24,8 @@ import java.util.UUID;
  */
 @Service
 public class OrderServiceImpl implements OrderService {
+
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private RestTemplate restTemplate;
@@ -59,6 +63,9 @@ public class OrderServiceImpl implements OrderService {
         String productDetails = productFeignClient.productDetails(productId);
         JsonNode jsonNode = JsonUtils.str2JsonNode(productDetails);
         Map<String, String> strMap = new HashMap<>();
+
+        logger.info("sending an order...");
+
         ProductOrder productOrder = new ProductOrder();
         productOrder.setCreateTime(new Date());
         productOrder.setUserId(userId);
